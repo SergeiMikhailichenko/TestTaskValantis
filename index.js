@@ -161,8 +161,8 @@ async function applySearch() {
 
     }
 
-    arrElements = await loadProducts(params);
-
+    const elementsIds = await loadProducts(params);
+    arrElements = [...new Set(elementsIds)];
     await displayList(arrElements, rows, currentPage);
     displayPagination(arrElements, rows);
     
