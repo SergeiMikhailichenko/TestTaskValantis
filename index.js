@@ -18,6 +18,7 @@ async function loadProducts(params) {
         const responseData = await response.json();
         return responseData.result;
     }catch(e){
+        console.log(e);
         return loadProducts(params);
     }
 
