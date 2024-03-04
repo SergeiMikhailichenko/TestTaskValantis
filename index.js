@@ -184,3 +184,4 @@ async function applySearch() {
 displayBrandsList();
 displayAllProduct();
 document.getElementById('searchButton').addEventListener('click', applySearch);
+document.getElementById('resetFilter').addEventListener('click', displayAllProduct);
