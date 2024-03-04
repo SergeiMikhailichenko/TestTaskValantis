@@ -24,6 +24,17 @@ async function loadProducts(params) {
 
 }
 
+async function displayAllProduct () {
+    const params = {
+        "action": "get_ids",
+        "params": {}
+    };
+    const arrIds = await loadProducts(params);
+    arrElements = [...new Set(arrIds)];
+    await displayList(arrElements, rows, currentPage);
+    displayPagination(arrElements, rows);
+}
+
 async function displayBrandsList() {
     const paramsBrands = {
         "action": "get_fields",
@@ -171,4 +182,5 @@ async function applySearch() {
 
 
 displayBrandsList();
+displayAllProduct();
 document.getElementById('searchButton').addEventListener('click', applySearch);
